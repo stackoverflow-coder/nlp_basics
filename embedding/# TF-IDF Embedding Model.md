@@ -60,4 +60,5 @@ You can configure the n-gram range (e.g., 1 for unigrams, 2 for bigrams) when bu
 
 ## References
 
--
+- [Wikipedia: TF-IDF](https://en.wikipedia.org/wiki/Tf%E2%80%93idf)
+- [Scikit-learn: TfidfVectorizer](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html)
