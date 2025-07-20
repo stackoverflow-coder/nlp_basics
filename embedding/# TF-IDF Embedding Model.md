@@ -24,18 +24,29 @@ TF-IDF(word, document) = TF(word, document) * IDF(word)
 Where:
 - **TF(word, document):** Number of times the word appears in the document.
 - **IDF(word):** `log((N + 1) / (df + 1)) + 1`
-    - `N` is the total number of documents.
-    - `df` is the number of documents containing the word.
+   - `N` is the total number of documents.
+   - `df` is the number of documents containing the word.
+
+---
+
+## N-gram Embedding
+
+In addition to single words (unigrams), the model can generate embeddings using n-grams (sequences of n words). N-gram embeddings capture more context and can improve performance for certain tasks.
+
+- **N-gram Extraction:** The model tokenizes texts and extracts contiguous sequences of n words (e.g., bigrams, trigrams).
+- **TF-IDF for N-grams:** The same TF-IDF calculation is applied to n-grams, allowing the embedding to represent phrases as well as individual words.
+
+You can configure the n-gram range (e.g., 1 for unigrams, 2 for bigrams) when building the vocabulary and generating vectors.
 
 ---
 
 ## Usage
 
 1. **Build the Vocabulary:**
-   - The model scans all texts, selects the most common words, and computes IDF values.
+   - The model scans all texts, selects the most common words and n-grams, and computes IDF values.
 
 2. **Convert Text to Vector:**
-   - Each text is tokenized, and a vector is created where each element is the TF-IDF score of a word in the vocabulary.
+   - Each text is tokenized, and a vector is created where each element is the TF-IDF score of a word or n-gram in the vocabulary.
 
 ---
 
